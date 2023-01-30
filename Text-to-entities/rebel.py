@@ -33,6 +33,7 @@ with open(args.filename, 'r') as file:
 
 """ Clustering """
 doc = nlp(text)
+clusters = []
 
 def find_cluster(token):
     # this token is a head of a sentence
@@ -51,6 +52,11 @@ print ("--------------------------- CLUSTERS ------------------------------")
 for c in clusters.values():
     print(c)
     
+# Open the file in write mode
+with open("output.txt", "w") as file:
+    # Write multiple lines of text to the file
+    for c in clusters.values():
+        print(c, file = file)
 
 """# Load the REBEL model"""
 
@@ -763,4 +769,3 @@ kb.print()
 # save_network_html(kb, filename=filename)
 # save_kb(kb, filename.split(".")[0] + ".p")
 # IPython.display.HTML(filename=filename)
-

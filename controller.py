@@ -7,31 +7,31 @@ from pathlib import Path
 # input txt 
 input_txt =Path('input.txt').read_text(encoding="UTF-8")
 
-# # pass to crawler
-# output = open("./crawler/build/test.txt", "w")
-# output.write(input_txt)
+# pass to crawler
+output = open("./crawler/build/test.txt", "w")
+output.write(input_txt)
 
-# #crawler 
+#crawler 
 print ("Working on some crawling ...")
-# command = "./crawler/build/main"
-# process = subprocess.Popen(command.split(),stdout=subprocess.PIPE)
-# process.wait()
+command = "./crawler/build/main"
+process = subprocess.Popen(command.split(),stdout=subprocess.PIPE)
+process.wait()
 print("Crawler is now done!!")
 
 #now Translate
 
 #first input file 
 print ("Working on some translation ...")
-# command = "python3 ./vie-eng-Translate/vi2en.py -filename input" 
-# print ("executing: "+command)
-# process = subprocess.Popen(command.split(),stdout=subprocess.PIPE)
-# process.wait()
+command = "python3 ./vie-eng-Translate/vi2en.py -filename input" 
+print ("executing: "+command)
+process = subprocess.Popen(command.split(),stdout=subprocess.PIPE)
+process.wait()
 
-# for i in range(10):
-#      command = "python3 ./vie-eng-Translate/vi2en.py -filename id_"+ str(i+1)  
-#      print ("executing: "+command)
-#      process = subprocess.Popen(command.split(),stdout=subprocess.PIPE)
-#      process.wait()
+for i in range(10):
+     command = "python3 ./vie-eng-Translate/vi2en.py -filename id_"+ str(i+1)  
+     print ("executing: "+command)
+     process = subprocess.Popen(command.split(),stdout=subprocess.PIPE)
+     process.wait()
 
 print ("translation is now done ...")
 
